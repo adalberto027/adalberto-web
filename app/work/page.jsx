@@ -28,7 +28,7 @@ const projects = [
     . Led the creation of a detailed design document, implemented key features, and verified feature deployment to 100% GA through BI metrics.
     . Implemented key features for the privacy dashboard, continuously improving code quality and functionality based on feedback from mentors.
     `,
-    stack: ["-BI metrics", "-Design", "-Privacy Dashboard"],
+    stack: ["BI metrics", "Design", "Privacy Dashboard"],
     image: "/assets/work/microsoft.png",
     live: "",
     github: "",
@@ -41,7 +41,7 @@ const projects = [
     . Attend weekly classes, including Software Development Studio, Applied Data Structures, and Intro to Product Management.
     . Completed projects across Tech disciplines including data structures and algorithms under Google's guidance.
     `,
-    stack: ["-Software Development", "-Data Structures", "-Management"],
+    stack: ["Software Development", "Data Structures", "Management"],
     image: "/assets/work/google.png",
     live: "",
     github: "",
@@ -54,7 +54,7 @@ const projects = [
     . Managed 1M+ results and participated in a NASA panel.
     . Reduced data retrieval time and enhanced historical analysis processes.
     `,
-    stack: ["-Python", "-Data Visualization", "-Seaborn"],
+    stack: ["Python", "Data Visualization", "Seaborn"],
     image: "/assets/work/nasa.png",
     live: "",
     github: "",
