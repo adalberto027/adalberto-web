@@ -1,5 +1,4 @@
 "use client";
-
 import {
   FaHtml5,
   FaCss3,
@@ -7,47 +6,48 @@ import {
   FaReact,
   FaFigma,
   FaNodeJs,
+  FaPython,
+  FaCode,
+  FaDatabase,
+  FaGithub,
 } from "react-icons/fa";
+import { SiPhp, SiC } from "react-icons/si";
 
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+
 
 // about data
 const about = {
   title: "About me",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "Self-taught programmer with impactful experiences at NASA, Google, and Microsoft, driven to innovate and lead in tech.",
   info: [
     {
       fieldName: "Name",
-      fieldValue: "Luke Coleman",
+      fieldValue: "Adalberto Vazquez",
     },
     {
       fieldName: "Phone",
-      fieldValue: "(+40) 321 654 678",
+      fieldValue: "+1 (915) 407 6593",
     },
     {
       fieldName: "Experience",
-      fieldValue: "12+ Years",
-    },
-    {
-      fieldName: "Skype",
-      fieldValue: "luke.01",
+      fieldValue: "2 Big tech internships",
     },
     {
       fieldName: "Nationality",
       fieldValue: "American",
     },
     {
-      fieldName: "Email",
-      fieldValue: "luke.01@gmail.com",
+      fieldName: "Languages",
+      fieldValue: "English, Spanish",
     },
     {
-      fieldName: "Freelance",
+      fieldName: "Summer/Fall 2025 internship:",
       fieldValue: "Available",
     },
     {
-      fieldName: "Languages",
-      fieldValue: "English, Spanish",
+      fieldName: "Email",
+      fieldValue: "adalberto2772003@gmail.com",
     },
   ],
 };
@@ -57,37 +57,27 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My experience",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "I have gained diverse experience at Microsoft, Google, and NASA JPL, implementing impactful technical solutions and fostering collaboration in STEM environments.",
   items: [
     {
-      company: "Tech Solutions Inc.",
-      position: "Full Stack Developer",
-      duration: "2022 - Present",
+      company: "Intern",
+      position: "Microsoft",
+      duration: "May/2024 - Present",
     },
     {
-      company: "Web Design Studio",
-      position: "Front-End Developer Intern",
-      duration: "Summer 2021",
+      company: "Tech Exchange Student",
+      position: "Google",
+      duration: "Jan/2024 - Present",
     },
     {
-      company: "E-commerce Startup",
-      position: "Freelance Web Developer",
-      duration: "2020 - 2021",
+      company: "Instructor Assistant",
+      position: "The University of Texas at El Paso",
+      duration: "Aug/2023 - Present",
     },
     {
-      company: "Tech Academy",
-      position: "Teaching Assistant",
-      duration: "2019 - 2020",
-    },
-    {
-      company: "Digital Agency",
-      position: "UI/UX Designer",
-      duration: "2018 - 2019",
-    },
-    {
-      company: "Software Development Firm",
-      position: "Junior Developer",
-      duration: "2017 - 2018",
+      company: "Intern",
+      position: "NASA's Jet Propulsion Laboratory",
+      duration: "Jun/2023 - Sep/2023",
     },
   ],
 };
@@ -97,37 +87,22 @@ const education = {
   icon: "/assets/resume/cap.svg",
   title: "My education",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "Earned a 3.96 GPA while pursuing a BS in Computer Science with a concentration in Data Analytics, complemented by minors in Mathematics and Management.",
   items: [
     {
-      institution: "Online Course Platform",
-      degree: "Full Stack Web Development Bootcamp",
-      duration: "2023",
+      institution: "The University of Texas at El Paso",
+      degree: "Bachelor in Computer Science",
+      duration: "2022 - Present",
     },
     {
-      institution: "Codecademy",
-      degree: "Front-end Track",
-      duration: "2022",
+      institution: "The University of Texas at El Paso",
+      degree: "Minor in Mathematics",
+      duration: "2022 - Present",
     },
     {
-      institution: "Online Course",
-      degree: "Programming Course",
-      duration: "2020 - 2021",
-    },
-    {
-      institution: "Tech Institute",
-      degree: "Certified Web Developer",
-      duration: "2019",
-    },
-    {
-      institution: "Design School",
-      degree: "Diploma in Graphic Design",
-      duration: "2016 - 2018",
-    },
-    {
-      institution: "Community College",
-      degree: "Associate Degree in Computer Science",
-      duration: "2014 - 2016",
+      institution: "The University of Texas at El Paso",
+      degree: "Minor in Management",
+      duration: "2023 - Present",
     },
   ],
 };
@@ -136,7 +111,7 @@ const education = {
 const skills = {
   title: "My skills",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "Adaptable learner who prioritizes the task, mastering new skills to achieve any goal.",
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -155,12 +130,8 @@ const skills = {
       name: "react.js",
     },
     {
-      icon: <SiNextdotjs />,
-      name: "next.js",
-    },
-    {
-      icon: <SiTailwindcss />,
-      name: "tailwind.css",
+      icon: <FaCode />, // Alternativa para Java
+      name: "Java",
     },
     {
       icon: <FaNodeJs />,
@@ -170,8 +141,29 @@ const skills = {
       icon: <FaFigma />,
       name: "figma",
     },
+    {
+      icon: <FaPython />,
+      name: "python",
+    },
+    {
+      icon: <FaDatabase />, // Alternativa para MySQL
+      name: "MySQL",
+    },
+    {
+      icon: <SiPhp />, // PHP debería funcionar
+      name: "PHP",
+    },
+    {
+      icon: <FaGithub />,
+      name: "GitHub",
+    },
+    {
+      icon: <SiC />, // Nuevo ícono para C
+      name: "C",
+    },
   ],
 };
+
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 

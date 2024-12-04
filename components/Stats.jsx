@@ -4,20 +4,20 @@ import CountUp from "react-countup";
 
 const stats = [
   {
-    num: 12,
-    text: "Years of experience",
+    num: 2,
+    text: "previous internships",
   },
   {
-    num: 26,
-    text: "Projects completed",
+    num: 4,
+    text: "Scholarships awarded",
   },
   {
-    num: 8,
-    text: "Technologies mastered",
+    num: 6,
+    text: "Times Dean's List student",
   },
   {
-    num: 500,
-    text: "Code commits",
+    num: 110,
+    text: "Students mentored",
   },
 ];
 

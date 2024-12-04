@@ -22,34 +22,40 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
-    category: "frontend",
-    title: "project 1",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
-    image: "/assets/work/thumb1.png",
+    title: "Microsoft Internship",
+    description: `
+    . Developed comprehensive functional and design specifications for a feature on the privacy dashboard, collaborating with fellow interns and ensuring clarity and alignment with project requirements.
+    . Led the creation of a detailed design document, implemented key features, and verified feature deployment to 100% GA through BI metrics.
+    . Implemented key features for the privacy dashboard, continuously improving code quality and functionality based on feedback from mentors.
+    `,
+    stack: ["-BI metrics", "-Design", "-Privacy Dashboard"],
+    image: "/assets/work/microsoft.png",
     live: "",
     github: "",
   },
   {
     num: "02",
-    category: "fullstack",
-    title: "project 2",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
-    image: "/assets/work/thumb2.png",
+    title: "Google Tech Exchange Program",
+    description: `
+    . Selected as one of the 180 students across 16 U.S. universities to participate in Google’s “Tech Exchange.”
+    . Attend weekly classes, including Software Development Studio, Applied Data Structures, and Intro to Product Management.
+    . Completed projects across Tech disciplines including data structures and algorithms under Google's guidance.
+    `,
+    stack: ["-Software Development", "-Data Structures", "-Management"],
+    image: "/assets/work/google.png",
     live: "",
     github: "",
   },
   {
     num: "03",
-    category: "frontend",
-    title: "project 3",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }],
-    image: "/assets/work/thumb3.png",
+    title: "NASA JPL Internship",
+    description: `
+    . Developed a Python tool utilizing the Seaborn library to visualize performance changes in the AMMOS Mission Data Processing System.
+    . Managed 1M+ results and participated in a NASA panel.
+    . Reduced data retrieval time and enhanced historical analysis processes.
+    `,
+    stack: ["-Python", "-Data Visualization", "-Seaborn"],
+    image: "/assets/work/nasa.png",
     live: "",
     github: "",
   },
@@ -59,9 +65,7 @@ const Work = () => {
   const [project, setProject] = useState(projects[0]);
 
   const handleSlideChange = (swiper) => {
-    // get current slide index
     const currentIndex = swiper.activeIndex;
-    // update project state based on current slide index
     setProject(projects[currentIndex]);
   };
 
@@ -70,41 +74,32 @@ const Work = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+        transition: { delay: 0.4, duration: 0.4, ease: "easeIn" },
       }}
       className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
     >
       <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row xl:gap-[30px]">
-          <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
-            <div className="flex flex-col gap-[30px] h-[50%]">
-              {/* outline num */}
-              <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
-                {project.num}
-              </div>
-              {/* project category */}
-              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.category} project
-              </h2>
-              {/* project description */}
-              <p className="text-white/60">{project.description}</p>
-              {/* stack */}
-              <ul className="flex gap-4">
-                {project.stack.map((item, index) => {
-                  return (
-                    <li key={index} className="text-xl text-accent">
-                      {item.name}
-                      {/* remove the last comma */}
-                      {index !== project.stack.length - 1 && ","}
-                    </li>
-                  );
-                })}
-              </ul>
-              {/* border */}
-              <div className="border border-white/20"></div>
-              {/* buttons */}
-              <div className="flex items-center gap-4">
-                {/* live project button */}
+        <div className="flex flex-col xl:flex-row xl:gap-[30px] items-center">
+          {/* Text Section */}
+          <div className="w-full xl:w-[50%] flex flex-col justify-center gap-[30px] order-2 xl:order-none">
+            <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
+              {project.num}
+            </div>
+            <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
+              {project.title}
+            </h2>
+            <p className="text-white/60 whitespace-pre-line">{project.description}</p>
+            <ul className="flex gap-4">
+              {project.stack.map((item, index) => (
+                <li key={index} className="text-xl text-accent">
+                  {item}
+                  {index !== project.stack.length - 1 && ","}
+                </li>
+              ))}
+            </ul>
+            <div className="border border-white/20"></div>
+            <div className="flex items-center gap-4">
+              {project.live && (
                 <Link href={project.live}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
@@ -117,7 +112,8 @@ const Work = () => {
                     </Tooltip>
                   </TooltipProvider>
                 </Link>
-                {/* github project button */}
+              )}
+              {project.github && (
                 <Link href={project.github}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
@@ -130,36 +126,29 @@ const Work = () => {
                     </Tooltip>
                   </TooltipProvider>
                 </Link>
-              </div>
+              )}
             </div>
           </div>
-          <div className="w-full xl:w-[50%]">
+          {/* Image Section */}
+          <div className="w-full xl:w-[50%] flex items-center justify-center">
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
-              className="xl:h-[520px] mb-12"
+              className="h-[420px] w-full mb-12"
               onSlideChange={handleSlideChange}
             >
-              {projects.map((project, index) => {
-                return (
-                  <SwiperSlide key={index} className="w-full">
-                    <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
-                      {/* overlay */}
-                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
-                      {/* image */}
-                      <div className="relative w-full h-full">
-                        <Image
-                          src={project.image}
-                          fill
-                          className="object-cover"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
-              {/* slider buttons */}
+              {projects.map((project, index) => (
+                <SwiperSlide key={index} className="w-full">
+                  <div className="h-[420px] relative flex justify-center items-center bg-pink-50/20 rounded-lg overflow-hidden">
+                    <Image
+                      src={project.image}
+                      fill
+                      className="object-cover"
+                      alt={project.title}
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
               <WorkSliderBtns
                 containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
                 btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
